@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -17,14 +20,15 @@ public class Main {
     *
     *
     * */
+        System.out.println("Задача 1.");
+        int[] firstArr = new int[3];
+        for (int i = 0; i < firstArr.length; i++) {
+            firstArr[i] = i;
+        }
 
-    int[] firstArr = new int[3];
-    for (int i = 0; i < firstArr.length; i++) {
-         firstArr[i]= i ;
-    }
-
-    float[] secondArr = {1.57f, 7.654f, 9.986f};
-    byte[] thirdArr = new byte[33];
+        float[] secondArr = {1.57f, 7.654f, 9.986f};
+        // byte[] thirdArr = new byte[33];
+        int[] thirdArr = arrayRandom(30);
 
     /* 2 задача
 
@@ -32,31 +36,72 @@ public class Main {
     через запятую. Запятая между последним элементом одного массива и первым элементом следующего не нужна.
     */
 
+        System.out.println("Задача 2.");
         for (int i = 0; i < firstArr.length; i++) {
-            System.out.printf("%s" , firstArr[i]);
+            System.out.printf("%s", firstArr[i]);
             if (i + 1 != firstArr.length) {
-                System.out.printf(", ");
+                System.out.print(", ");
             } else
-            System.out.printf("\n");
+                System.out.print("\n");
         }
 
         for (int i = 0; i < secondArr.length; i++) {
-            System.out.printf("%s" , secondArr[i]);
+            System.out.printf("%s", secondArr[i]);
             if (i + 1 != secondArr.length) {
-                System.out.printf(", ");
+                System.out.print(", ");
             } else
-                System.out.printf("\n");
+                System.out.print("\n");
 
         }
 
         for (int i = 0; i < thirdArr.length; i++) {
-            System.out.printf("%s" , thirdArr[i]);
+            System.out.printf("%s", thirdArr[i]);
             if (i + 1 != thirdArr.length) {
-                System.out.printf(", ");
+                System.out.print(", ");
             } else
-                System.out.printf("\n");
+                System.out.print("\n");
 
         }
+    /*## 3 задача
+
+    Теперь ваша задача – распечатать все элементы всех трех массивов, но начинать нужно не с первого элемента массива, а с последнего. Элементы должны быть распечатаны через запятую, при этом элементы одного массива располагаются на одной строчке, а элементы другого массива – на другой.
+
+    Запятая между последним элементом одного массива и первым элементом следующего не нужна.
+    */
+        System.out.println("Задача 3.");
+
+        for (int i = (firstArr.length - 1) ; i >= 0 ; i--) {
+            System.out.printf("%s", firstArr[i]);
+            if (i != 0 ) {
+                System.out.print(", ");
+            } else
+                System.out.print("\n");
+        }
+
+        for (int i = (secondArr.length - 1) ; i >= 0 ; i--) {
+            System.out.printf("%s", secondArr[i]);
+            if (i != 0 ) {
+                System.out.print(", ");
+            } else
+                System.out.print("\n");
+        }
+
+        for (int i = (thirdArr.length - 1) ; i >= 0 ; i--) {
+            System.out.printf("%s", thirdArr[i]);
+            if (i != 0 ) {
+                System.out.print(", ");
+            } else
+                System.out.print("\n");
+        }
+
+    }
+    public static int[] arrayRandom(int length) {
+        Random random = new Random();
+        int[] array = new int[length];
+        for (int i=0; i< length; i++ ) {
+            array[i] = random.nextInt( 1_000) + 345;
+        }
+        return array;
     }
 
 }
