@@ -1,4 +1,4 @@
-import java.util.Arrays;
+//import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -94,6 +94,29 @@ public class Main {
                 System.out.print("\n");
         }
 
+
+    /*
+    * ### 4 задача
+
+    Пройдитесь по первому целочисленному массиву и все нечетные числа в нем сделайте четными (нужно прибавить 1).
+
+    Важно: код должен работать с любым целочисленным массивом, поэтому для решения задания вам нужно использовать циклы.
+
+    Распечатайте результат преобразования в консоль.
+    *
+    * Для очевидности правильности алгоритма возьмём массив побольше - третий
+    * */
+        System.out.println("Задача 4.");
+        for (int i = 0; i < thirdArr.length; i++) {
+            if (thirdArr[i] % 2 != 0) { thirdArr[i]++;
+            }
+            System.out.printf("%s", thirdArr[i]);
+            if (i + 1 != thirdArr.length) {
+                System.out.print(", ");
+            } else
+                System.out.print("\n");
+
+        }
     }
     public static int[] arrayRandom(int length) {
         Random random = new Random();
